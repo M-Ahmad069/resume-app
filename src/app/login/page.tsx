@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Eye, EyeOff, Mail, Lock, ArrowLeft, User } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, ArrowLeft, LogIn } from 'lucide-react';
 import Link from 'next/link';
 
 export default function LoginPage() {
@@ -64,18 +64,18 @@ export default function LoginPage() {
             transition={{ duration: 0.4, delay: 0.3 }}
           >
             <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <User className="w-8 h-8 text-white" />
+              <LogIn className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
               Welcome Back
             </h1>
-            <p className="text-sm sm:text-base text-gray-600">Sign in to continue your journey</p>
+            <p className="text-sm sm:text-base text-gray-600">Sign in to your account</p>
           </motion.div>
 
           {/* Login Form */}
           <motion.form 
             onSubmit={handleSubmit}
-            className="space-y-6"
+            className="space-y-5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.4 }}
@@ -140,18 +140,17 @@ export default function LoginPage() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded cursor-pointer"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
+                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700 cursor-pointer">
                   Remember me
                 </label>
               </div>
-              <Link 
-                href="/forgot-password" 
-                className="text-sm text-blue-600 hover:text-blue-500 transition-colors"
-              >
-                Forgot password?
-              </Link>
+              <div className="text-sm">
+                <a href="#" className="text-blue-600 hover:text-blue-500 font-medium transition-colors cursor-pointer">
+                  Forgot password?
+                </a>
+              </div>
             </div>
 
             {/* Login Button */}
