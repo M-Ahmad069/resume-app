@@ -2,13 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   transpilePackages: [
-    'react-particles', 
-    'tsparticles', 
-    'tsparticles-slim', 
+    'react-particles',
+    'tsparticles',
+    'tsparticles-slim',
     'tsparticles-engine',
-    'react-spring',
     'react-intersection-observer',
-    'react-parallax-tilt'
   ],
   webpack: (config, { isServer }) => {
     if (!isServer) {
